@@ -3,28 +3,28 @@
 #include "Expression.hpp"
 #include "SatisfactionEvaluator.hpp"
 
-#define SUCCESS (00)
-#define FAILURE (01)
+#define SUCCESS (0)
+#define FAILURE (1)
 
 int main(int argc, char const *argv[])
-{   
-    // Verifica o número correto de argumentos da linha de comando.
+{
+    // Check the correct number of command-line arguments.
     if (argc != 4)
     {
         std::cout << "Usage: -function -expression -input" << std::endl;
 
-        // Encerra a execução do programa com falha.
+        // Terminate the program with an error.
         return FAILURE;
-    }    
+    }
 
-    // Extrai os argumentos da linha de comando.
+    // Extract command-line arguments.
     std::string function(argv[1]);
     std::string expressionBase(argv[2]);
     std::string input(argv[3]);
 
     try
-    {   
-        // Avalia a função especificada nos argumentos da linha de comando.
+    {
+        // Evaluate the function specified in the command-line arguments.
         if (function == "−a" || function == "-a")
         {
             Expression expression = Expression(expressionBase, input);
@@ -43,16 +43,16 @@ int main(int argc, char const *argv[])
     }
     catch (...)
     {
-        // Trata exceções e imprime uma mensagem de erro.
+        // Handle exceptions and print an error message.
         std::cout << "The parameters entered are invalid." << std::endl;
         std::cout << "Function: " << function << std::endl;
         std::cout << "Expression: " << expressionBase << std::endl;
         std::cout << "Input: " << input << std::endl;
 
-        // Encerra a execução do programa com falha.
+        // Terminate the program with an error.
         return FAILURE;
     }
 
-    // Encerra a execução do programa com sucesso.
+    // Terminate the program with success.
     return SUCCESS;
 }
