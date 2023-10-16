@@ -7,96 +7,96 @@
 #include "Nodule.hpp"
 
 /**
- * @brief Exceção lançada quando um valor não foi definido corretamente.
+ * @brief Exception thrown when a value is not set correctly.
  *
- * Esta exceção é lançada quando ocorre uma tentativa de acesso a um valor que não foi definido.
+ * This exception is thrown when an attempt is made to access a value that has not been set.
  */
 class value_not_set_exception
 {};
 
 /**
- * @brief Classe que representa um valor de entrada booleano.
+ * @brief Class representing a boolean input value.
  *
- * Esta classe representa um valor de entrada booleano que é associado a uma chave ou variável.
+ * This class represents a boolean input value associated with a key or variable.
  */
 class InputValue
 {
-    public:
-        std::string key;
-        bool value;
+public:
+    std::string key;
+    bool value;
 
-        /**
-         * @brief Construtor padrão da classe InputValue.
-         *
-         * Cria uma instância de InputValue com valores padrão (chave vazia e valor falso).
-         */
-        InputValue();
+    /**
+     * @brief Default constructor of the InputValue class.
+     *
+     * Creates an instance of InputValue with default values (empty key and false value).
+     */
+    InputValue();
 
-        /**
-         * @brief Construtor da classe InputValue.
-         *
-         * Cria uma instância de InputValue associada a uma chave e um valor booleano.
-         *
-         * @param key A chave ou variável associada ao valor.
-         * @param value O valor booleano a ser associado à chave.
-         */
-        InputValue(std::string key, bool value);
+    /**
+     * @brief Constructor of the InputValue class.
+     *
+     * Creates an instance of InputValue associated with a key and a boolean value.
+     *
+     * @param key The key or variable associated with the value.
+     * @param value The boolean value to be associated with the key.
+     */
+    InputValue(std::string key, bool value);
 };
 
 /**
- * @brief Classe que representa um nódulo de entrada booleano.
+ * @brief Class representing a boolean input nodule.
  *
- * Esta classe é uma extensão da classe Nodule e representa um nódulo de entrada booleano que pode
- * conter um valor atual. Ela é usada para representar variáveis booleanas na expressão.
+ * This class is an extension of the Nodule class and represents a boolean input nodule that can
+ * hold a current value. It is used to represent boolean variables in the expression.
  */
 class InputNodule
     : public Nodule
 {
-    protected:
-        bool _currentValue;
-        bool _currentValueIsSet = false;
+protected:
+    bool _currentValue;
+    bool _currentValueIsSet = false;
 
-    public:
-        /**
-         * @brief Construtor padrão da classe InputNodule.
-         *
-         * Cria uma instância de InputNodule sem um valor atual definido.
-         */
-        InputNodule();
+public:
+    /**
+     * @brief Default constructor of the InputNodule class.
+     *
+     * Creates an instance of InputNodule without a defined current value.
+     */
+    InputNodule();
 
-        /**
-         * @brief Construtor da classe InputNodule.
-         *
-         * Cria uma instância de InputNodule associada a uma chave e um valor atual.
-         *
-         * @param value A chave ou variável associada ao nódulo de entrada.
-         */
-        InputNodule(std::string value);
+    /**
+     * @brief Constructor of the InputNodule class.
+     *
+     * Creates an instance of InputNodule associated with a key.
+     *
+     * @param value The key or variable associated with the input nodule.
+     */
+    InputNodule(std::string value);
 
-        /**
-         * @brief Construtor da classe InputNodule.
-         *
-         * Cria uma instância de InputNodule associada a uma chave e um valor atual.
-         *
-         * @param value A chave ou variável associada ao nódulo de entrada.
-         * @param currentValue O valor atual associado ao nódulo de entrada.
-         */
-        InputNodule(std::string value, bool currentValue);
+    /**
+     * @brief Constructor of the InputNodule class.
+     *
+     * Creates an instance of InputNodule associated with a key and a current value.
+     *
+     * @param value The key or variable associated with the input nodule.
+     * @param currentValue The current value associated with the input nodule.
+     */
+    InputNodule(std::string value, bool currentValue);
 
-        /**
-         * @brief Obtém o valor atual do nódulo de entrada.
-         *
-         * @return O valor atual do nódulo de entrada.
-         * @throw value_not_set_exception Se o valor atual não foi definido.
-         */
-        bool GetCurrentValue();
+    /**
+     * @brief Gets the current value of the input nodule.
+     *
+     * @return The current value of the input nodule.
+     * @throw value_not_set_exception If the current value has not been set.
+     */
+    bool GetCurrentValue();
 
-        /**
-         * @brief Define um novo valor atual para o nódulo de entrada.
-         *
-         * @param newValue O novo valor atual a ser associado ao nódulo de entrada.
-         */
-        void SetCurrentValue(bool newValue);
+    /**
+     * @brief Sets a new current value for the input nodule.
+     *
+     * @param newValue The new current value to be associated with the input nodule.
+     */
+    void SetCurrentValue(bool newValue);
 };
 
 #endif

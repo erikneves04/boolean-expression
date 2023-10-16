@@ -6,10 +6,10 @@
 #include <string>
 
 /**
- * @brief Enumeração que representa os tipos de nódulos em uma expressão.
+ * @brief Enumeration that represents the types of nodules in an expression.
  *
- * Esta enumeração define os tipos de nódulos que podem ocorrer em uma expressão booleana.
- * Os tipos incluem entrada, operador, início de parênteses e fim de parênteses.
+ * This enumeration defines the types of nodules that can occur in a boolean expression.
+ * The types include input, operator, start parentheses, and end parentheses.
  */
 enum class NoduleType
 {
@@ -20,49 +20,49 @@ enum class NoduleType
 };
 
 /**
- * @brief Classe que representa um nódulo em uma expressão.
+ * @brief Class representing a nodule in an expression.
  *
- * Esta classe representa um item em uma expressão booleana. Ela pode ser de vários tipos,
- * incluindo entrada (variável), operador, início de parênteses e fim de parênteses. Cada nódulo
- * possui um valor e um tipo associados a ele.
+ * This class represents an item in a boolean expression. It can be of various types,
+ * including input (variable), operator, start parentheses, and end parentheses. Each nodule
+ * has a value and a type associated with it.
  */
 class Nodule
 {
-    protected:
-        NoduleType _type;
-        std::string _value;
+protected:
+    NoduleType _type;
+    std::string _value;
 
-    public:
-        /**
-         * @brief Construtor padrão da classe Nodule.
-         *
-         * Cria uma instância de Nodule sem um valor ou tipo especificado.
-         */
-        Nodule();
+public:
+    /**
+     * @brief Default constructor of the Nodule class.
+     *
+     * Creates an instance of Nodule without a specified value or type.
+     */
+    Nodule();
 
-        /**
-         * @brief Construtor da classe Nodule.
-         *
-         * Cria uma instância de Nodule associada a um valor e um tipo específico.
-         *
-         * @param value O valor associado ao nódulo.
-         * @param type O tipo do nódulo (NoduleType).
-         */
-        Nodule(std::string value, NoduleType type);
+    /**
+     * @brief Constructor of the Nodule class.
+     *
+     * Creates an instance of Nodule associated with a value and a specific type.
+     *
+     * @param value The value associated with the nodule.
+     * @param type The type of the nodule (NoduleType).
+     */
+    Nodule(std::string value, NoduleType type);
 
-        /**
-         * @brief Obtém o tipo do nódulo.
-         *
-         * @return O tipo do nódulo (NoduleType).
-         */
-        NoduleType GetType();
+    /**
+     * @brief Gets the type of the nodule.
+     *
+     * @return The type of the nodule (NoduleType).
+     */
+    NoduleType GetType();
 
-        /**
-         * @brief Obtém o valor do nódulo.
-         *
-         * @return O valor associado ao nódulo.
-         */
-        std::string GetValue();
+    /**
+     * @brief Gets the value of the nodule.
+     *
+     * @return The value associated with the nodule.
+     */
+    std::string GetValue();
 };
 
 #endif
