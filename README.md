@@ -25,9 +25,9 @@
     </ul>
     <h3>Example Usage</h3>
     <p>To evaluate a Boolean expression:</p>
-    <pre><code>./expression -a -expression "(3 & (1 | 0))" -input "11"</code></pre>
+    <pre><code>./expression -a "(3 & (1 | 0))" "11"</code></pre>
     <p>To check if a Boolean expression can satisfy specific constraints:</p>
-    <pre><code>./expression -s -expression "(3 & (1 | 0))" -input "e1"</code></pre>
+    <pre><code>./expression -s -expression "(3 & (1 | 0))" "e1"</code></pre>
     <p>In this case, an input element can be either zero or one, or a("for all") or e("exists").</p>
     <h2>License</h2>
     <p>This project is licensed under the MIT License - see the <a href="LICENSE">LICENSE</a> file for details.</p>
